@@ -40,9 +40,8 @@ El proyecto usa Supabase Auth:
 Tabla `scores`:
 
 ```sql
-create table scores (
+create table if not exists scores (
   id uuid primary key default gen_random_uuid(),
   score integer not null,
-  user_id uuid,
   created_at timestamp with time zone default now()
 );
